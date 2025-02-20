@@ -1,13 +1,21 @@
 import dotenv from "dotenv";
 import express from 'express'
 import config from 'config'
+import connectDb from "./utils/connectDb";
+import log from "./utils/logger";
+import router from './routes'
+
 
 //dotenv.config()
 
 const app = express()
 const PORT = config.get("port")
 
+app.use('/api', router)
+
 
 app.listen(PORT, () => {
-    console.log("Server listening on port: " + PORT)
+    log.info("Server listening on port: " + PORT)
+
+    // connectDb()
 })
