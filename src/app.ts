@@ -5,10 +5,10 @@ import log from "./utils/logger";
 import router from './routes'
 
 
-//dotenv.config()
+dotenv.config()
 
 const app = express()
-const PORT = config.get("port")
+const PORT = Number(process.env.PORT) || 8000;
 
 app.use('/api', router)
 
