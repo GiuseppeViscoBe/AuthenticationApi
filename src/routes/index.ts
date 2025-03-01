@@ -10,5 +10,6 @@ router.get('/healthCheck', (req,res) => {
 })
 
 router.use(user)
+router.use(auth)
 
 export default router

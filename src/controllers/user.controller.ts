@@ -48,7 +48,7 @@ export async function verifyUserHandler(req: Request<VerifyUserInput>, res : Res
         return res.send("User is already verified.")
     }
 
-    //check to see if th e verification code matches
+    //check to see if the verification code matches
     if(user.verificationCode == verificationCode){
         user.verified = true
 
